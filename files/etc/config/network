@@ -1,0 +1,55 @@
+
+config interface 'loopback'
+	option device 'lo'
+	option proto 'static'
+	option ipaddr '127.0.0.1'
+	option netmask '255.0.0.0'
+
+config globals 'globals'
+	option packet_steering '1'
+	option ula_prefix 'fd78:197e:dcde::/48'
+
+config device
+	option name 'br-lan'
+	option type 'bridge'
+	option macaddr '02:95:1D:1C:69:9B'
+	list ports 'lan1'
+	list ports 'lan2'
+	list ports 'lan3'
+	list ports 'lan4'
+
+config device
+	option name 'lan1'
+	option macaddr '02:95:1D:1C:69:9B'
+
+config device
+	option name 'lan2'
+	option macaddr '02:95:1D:1C:69:9B'
+
+config device
+	option name 'lan3'
+	option macaddr '02:95:1D:1C:69:9B'
+
+config device
+	option name 'lan4'
+	option macaddr '02:95:1D:1C:69:9B'
+
+config interface 'lan'
+	option device 'br-lan'
+	option proto 'static'
+	option netmask '255.255.255.0'
+	option ip6assign '60'
+	option ipaddr '192.168.0.1'
+
+config device
+	option name 'wan'
+	option macaddr 'D4:EE:07:45:EF:B9'
+
+config interface 'wan'
+	option device 'wan'
+	option proto 'dhcp'
+
+config interface 'wan6'
+	option device 'wan'
+	option proto 'dhcpv6'
+
