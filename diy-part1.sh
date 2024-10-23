@@ -21,4 +21,3 @@ sed -i '$a src-git mmdvm https://github.com/qzyuebing/mmdvm-openwrt' feeds.conf.
 #sed -i '$a src-git mmdvm https://github.com/lazywalker/mmdvm-openwrt' feeds.conf.default
 sed -i '$a src-git devtools https://github.com/lazywalker/devtools-feeds' feeds.conf.default
 sed -i '$a src-git pptp https://github.com/qzyuebing/luci-app-pptp-server' feeds.conf.default
-sed -i '$a src-git fros https://github.com/openfros/packages' feeds.conf.default
