@@ -5,17 +5,6 @@ config interface 'loopback'
 	option ipaddr '127.0.0.1'
 	option netmask '255.0.0.0'
 
-config globals 'globals'
-	option packet_steering '1'
-
-config device
-	option name 'br-lan'
-	option type 'bridge'
-	list ports 'lan1'
-	list ports 'lan2'
-	list ports 'lan3'
-	list ports 'lan4'
-
 config interface 'lan'
 	option device 'br-lan'
 	option proto 'static'
@@ -30,4 +19,7 @@ config interface 'wan'
 config interface 'wan6'
 	option device 'wan'
 	option proto 'dhcpv6'
+
+config globals 'globals'
+	option packet_steering '1'
 
